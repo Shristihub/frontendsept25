@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    p,h1,h2,h3{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }  
+    h2,h3{
+        background-color: aquamarine;
+    }
+    h1,p{
+      color:red;
+    }
+    .myclass{
+      color:blueviolet;
+    }
+     #header{
+        color:magenta
+    }
+    
+    h2.myclass{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+       
+     }
+     /* all children */
+     div p{
+      font-size: 20px;
+      color: green;
+
+     }
+     div>p{
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+     }
+     body p:first-of-type{
+      color: yellow;
+     }
+     
+    </style>
+</head>
+
+<body>
+    <p >Hi This is a paragraph</p>
+    <h3 class="myclass">This is a header -H3</h3>
+    <h1>Have a great day - H1</h1>
+    <h2 >CSS is for designing -H2</h2>
+
+    <div>
+        <p class="myclass">Hi This is a p inside div - child</p>
+        <p> oara</p>
+        <h2>inside div -H2</h2>
+        <section>
+            <p>p inside a section -  grand child </p>
+            <h3 id="myid">inside div h3</h3>
+            <article>
+                <p>great grand child</p>
+            </article>
+        </section>
+        <h1 class="myclass">inside div - H1</h1>
+        
+         
+    </div>
+   
+  
+     <p>paragragh</p>
+     <h3 id="header">This is a header- H3</h3>
+    <h1>Have a great day - H1</h1>
+    <h2 class="myclass">CSS is for designing - H2</h2>
+   
+</body>
+
+</html>
+
+
+

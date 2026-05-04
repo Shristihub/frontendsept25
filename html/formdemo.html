@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<form action="listdemo.html">
+		<table>
+			<tr>
+				<td> <label for="name">Name:</label></td>
+				<td> <input type="text" id="username" name="uname" placeholder="Enter Name" value="Priya"></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password:</label></td>
+				<td><input type="password" id="password" name="password" placeholder="Enter password"></td>
+			</tr>
+			<tr>
+				<td><label for="gender">Gender:</label></td>
+				<td><input type="radio" name="gender" value="male" checked>Male
+					<input type="radio" name="gender" value="female">Female
+				</td>
+			<tr>
+				<td><label for="hobbies">Hobbies:</label></td>
+				<td><input type="checkbox" name="hobbies" value="cricket">Cricket
+					<input type="checkbox" name="hobbies" value="football">Football
+					<input type="checkbox" name="hobbies" value="music">Music
+					<input type="checkbox" name="hobbies" value="reading">Reading
+					<input type="checkbox" name="hobbies" value="dance">Dance
+				</td>
+			</tr>
+			<tr>
+				<td><label for="Courses">Courses:</label></td>
+				<td><select name="courses" id="courses">
+						<option value="java">Java</option>
+						<option>Python</option>
+						<option value="javascript">JavaScript</option>
+						<option value="html">HTML</option>
+						<option value="css">CSS</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="comments">Comments:</label></td>
+				<td><textarea name="comments" id="comments" rows="5" cols="50"
+						placeholder="Enter your comments"></textarea></td>
+			</tr>
+			<tr>
+				<td> <input type="submit" value="Register"></td>
+				<td> <input type="reset" value="Reset"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+
+</html>

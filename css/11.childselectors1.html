@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color:green
+        }
+        div p{
+            color:red;
+            font-weight: bold;
+        }
+        div >p{
+            background-color: bisque;
+        }
+        div ~p{
+            letter-spacing: 4px;
+            font-size: 20px;
+        }
+        div + p{
+            background-color: yellow;
+        }
+        p ~ h3{
+            text-transform: uppercase;
+        }
+        p + h3{
+            background-color: cornflowerblue;
+        }
+        body :first-child{
+            color: blueviolet;
+        }
+        body :first-of-type{
+            background-color: chartreuse;
+        }
+    </style>
+
+<body>
+    <h3>headder tag</h3>
+ <div>
+    <h4>header</h4>
+    <p>Inside div-child of div</p>
+    <p>Inside div-child of div</p>
+    <section>
+        <p>grandchild of div</p>
+        <p>grandchild of div</p>
+    </section>
+ </div>
+ <p>adjacent/immediate sibling div</p>
+ <h3>Great day-sibling of p</h3>
+ <h3>Great day-sibling of p</h3>
+ <p>Inside div-general sibling of div</p>
+ <h3>Great day-sibling of p</h3>
+ <h3>Great day-sibling of p</h3>
+</body>
+
+</html>
