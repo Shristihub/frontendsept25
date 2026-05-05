@@ -12,33 +12,40 @@
         div p{
             color:red;
             font-weight: bold;
+            font-size: 20px;
         }
-        div >p{
+        
+        section >p{
             background-color: bisque;
         }
         div ~p{
             letter-spacing: 4px;
             font-size: 20px;
         }
+        /* immediate sibling selector */
         div + p{
             background-color: yellow;
         }
+        /* all the adjacent iblings of div which are h3 */
         p ~ h3{
             text-transform: uppercase;
+            color: magenta;
         }
+        
         p + h3{
             background-color: cornflowerblue;
         }
         body :first-child{
-            color: blueviolet;
+            color: blue;
+            font-weight: bolder;
         }
         body :first-of-type{
             background-color: chartreuse;
-        }
+        } 
     </style>
 
 <body>
-    <h3>headder tag</h3>
+    <h3>header tag</h3>
  <div>
     <h4>header</h4>
     <p>Inside div-child of div</p>
