@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+</head>
+<body>
+    Enter comments<textarea id="comments" rows =10 cols =20 onkeyup="printMessage()"></textarea>
+    <div id = "mydiv" style="background-color: aqua;"></div>
+    <script>
+        function printMessage(){
+            let comments = document.getElementById("comments").value;
+            let divElement = document.getElementById("mydiv");
+            divElement.innerHTML = comments;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let courses = ['javafullstack', 'frontend', 'cloud', 'AI'];
+        let courseName = prompt('Enter coursename')
+        let topics = [];
+        if (courseName.includes('j')) {
+            //create an array of jfs courses
+            topics = ['java', 'spring', 'react']
+            console.log(topics);
+
+        } else if (courseName == "f") {
+            //create an array of jfs courses
+            topics = ['javascript', 'css', 'react']
+
+        } else if (courseName == "cloud") {
+            //create an array of jfs courses
+            topics = ['aws', 'azure', 'gcp']
+
+        } else if (courseName == 'AI') {
+            //create an array of jfs courses
+            topics = ['ai', 'LLM', 'ML']
+
+        } else
+            document.write('no course available')
+
+        console.log(topics);    
+        document.write('Topics are: <br/>')
+        for (const topic of topics) {
+            document.write(`${topic} <br/>`)
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

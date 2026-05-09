@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<form action="01.datatypes.html" name="registerForm">
+		<table>
+			<tr>
+				<td>Enter Name</td>
+				<td><input type="text" id="username" placeholder="Enter Name" name="uname"></td>
+				</tr>
+			<tr>
+				<td> Enter Password</td>
+				<td><input type="password" id="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" value="male" id="gender1">Male
+					<input type="radio" name="gender" value="female" id="gender2">Female
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="Enter Details" onclick="validateUser()"></td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		function validateUser() {
+			let username = document.getElementById("username").value;
+			let password = document.getElementById("password").value;
+			let gender1 = document.getElementById("gender1");
+			let gender2 = document.getElementById("gender2");
+			if (username.length <= 0) {
+				alert("please enter a name");
+				document.registerForm.uname.focus();
+			}
+			else if (password.length <= 0) {
+				alert('enter password');
+				document.registerForm.password.focus();
+			}
+			else if (!gender1.checked && !gender2.checked) {
+				alert('select gender');
+				document.registerForm.gender[1].focus();
+			}
+			else {
+				document.registerForm.submit();
+			}
+		}
+
+	</script>
+</body>
+
+</html>

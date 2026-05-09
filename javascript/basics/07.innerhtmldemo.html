@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   Enter Name <input type="text" name="username" id="uname"><br/>
+    <input type="button" value="Click" onclick="sayHello()"><br/>
+    <div id="mydiv" style="background-color: cyan;color:red"></div>
+
+    <script>
+    function sayHello() {
+       let uname = document.getElementById('uname').value;
+       let divElement =  document.getElementById('mydiv'); // get the div object
+       //add value inside div
+       divElement.innerHTML=`<strong>welcome ${uname}</strong>`;
+    }
+    </script>
+</body>
+
+</html>

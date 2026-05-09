@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="01.datatypes.html" name="userForm">
+        Enter Name<input type="text" id="username" placeholder="Enter Name" name="uname"><br>
+        <input type="button" value="Enter Details" onclick="check()">
+        <div id="mydiv"></div>
+    </a>
+<script>
+    function check(){
+     let username = document.getElementById("username").value;
+     if(confirm('you are moving out. Do you want to continue?')){
+        alert('Bye. Please come again')
+        document.userForm.submit();
+     }else
+      alert('Thanks for staying back');
+      // get the div element
+      let div = document.getElementById("mydiv");
+      div.innerHTML = `Welcome ${username}`
+    }
+</script>
+</body>
+</html>

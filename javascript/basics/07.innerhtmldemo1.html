@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    Enter Username<input type="text" id="username"><br>
+    Enter City<input type="text" id="city"><br>
+    <input type="button" value="Show" onclick="greet()"><br>
+    <div id="mydiv" style="background-color: aqua;color:red"></div>
+    <script>
+        function greet() {
+            let uname = document.getElementById("username").value;
+            let city = document.getElementById("city").value;
+            alert(`Welcome ${uname}`);
+            let div = document.getElementById("mydiv");
+            div.innerHTML = `Welcome ${uname} from ${city}`;
+        }
+    </script>
+</body>
+
+</html>
