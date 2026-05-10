@@ -13,7 +13,7 @@
 		<table>
 			<tr>
 				<td>Enter Name</td>
-				<td><input type="text" id="username" placeholder="Enter Name" name="uname"></td>
+				<td><input type="text" id="username" placeholder="Enter Name" name="uname" ></td>
 				</tr>
 			<tr>
 				<td> Enter Password</td>
@@ -46,7 +46,7 @@
 			}
 			else if (!gender1.checked && !gender2.checked) {
 				alert('select gender');
-				document.registerForm.gender[1].focus();
+				document.registerForm.gender[0].focus();
 			}
 			else {
 				document.registerForm.submit();
