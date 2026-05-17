@@ -37,6 +37,8 @@ function showDetails(fn,username,city,message){
 }
 
 showDetails(userData,'Sri','Bangalore','Great day');
+showDetails((uname,city)=>console.log('hello'+uname),'Sri','Bangalore','Great day');
+
 
 
 //arrow function- lambda function
@@ -95,3 +97,13 @@ function userDetails2(username,city,salary){
 let bonusFunc1 = userDetails2('Sri', 'Bangalore', 50000);
 let bonus11 = bonusFunc1(); //  the inner function returns a value
 console.log(bonus11);
+
+
+// callback function- a function passed as an argument to another function
+
+let callbackHandler = function(){
+    console.log('hello from callback');
+}
+setTimeout(callbackHandler, 3000); // callback function called after 3 seconds
+
+setTimeout(()=>console.log('hello from callback'),5000); // arrow function as callback

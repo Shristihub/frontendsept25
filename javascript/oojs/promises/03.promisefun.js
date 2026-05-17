@@ -4,7 +4,7 @@ function getAllUsers() {
         // doin some work in the backend. takes time
         // simulating the backend
         setTimeout(() => {
-            console.log('Printing first in backend');
+            console.log('working first in backend');
             // getting userlist from backend
             users = [
                 { username: 'Raju', city: 'Ooty', userId: 10 },
@@ -13,17 +13,19 @@ function getAllUsers() {
             ]
             console.log('Printing next in backend');
             console.log(users.length);
-            if (users.length==1)
+            if (users.length > 1) {
+                console.log('getting user data');
                 resolve(users);
+            }
             else
                 reject("no user data")
         }, 2000);
 
-        console.log("prints third");
+        console.log("printing second");
     })
     return promise;
 }
-console.log('Printing second');
+console.log('Printing first');
 
 
 // this method returns a promise
@@ -33,21 +35,22 @@ getAllUsers().then(data => console.log(data), e => console.log(e))
 console.log();
 
 function findById(userid) {
-  return getAllUsers().then(users => {
-        let user = users.find(user => user.userId == userid);
-        if (user)
-            return Promise.resolve(user);
+   return getAllUsers().then(userdata => {
+        let nuser = userdata.find(user => user.userId == userid);
+        if (nuser)
+            return Promise.resolve(nuser);
         else
-            return Promise.reject("invalid user");
-    }, error => {
-        console.log(error);
-    });
-};
+            return Promise.reject('user not found');
+    },
+        error => console.log(error));
+}
+
 
 // let promise1 = findById(12)
 // promise1.then(data=>{},e=>{})
 
-findById(120).then(user => console.log(user), e => console.log(e));
+//shortcut
+findById(10).then(user => console.log(user), e => console.log(e));
 
 
 

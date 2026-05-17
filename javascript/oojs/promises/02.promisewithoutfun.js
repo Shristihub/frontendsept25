@@ -25,7 +25,7 @@ function getAllUsers() {
         { username: 'Rohan', city: 'Bangalore', userId: 12 },
     ]
     console.log('Printing next in backend');
-    },2000)
+    },3000)
     console.log("prints third");
   return users;
 }

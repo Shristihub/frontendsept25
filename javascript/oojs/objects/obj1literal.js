@@ -11,13 +11,14 @@ let employee = {
         console.log(empName + " " + empId);
     }
 }
-// console.log(employee);
+console.log(employee);
 console.log(employee.empName);
 console.log(employee.address.city);
 
 //add new property
 employee.mobile = 9892930;
-// console.log(employee);
+console.log(employee);
+employee.greet =()=> console.log('Great day');
 
 console.log()
 console.log()
@@ -37,10 +38,49 @@ for (const prop in employee) {
     } else if (value instanceof (Object)) {
         console.log('.... object...');
         for (const index in value)
-            console.log(prop, value[index]);
+            console.log(index, value[index]);
     } else
         console.log(prop + " " + value);
 }
 
 //array of employee objects
-let employees = [{}, {}, {}, {}]
+let employees = [{
+    empName: 'Jo',
+    empId: 10,
+    hobbies: ['dance', 'music'],
+    address: {
+        city: 'Goa', state: 'Goa'
+    },
+    details: function () {
+        console.log('hello');
+        console.log(empName + " " + empId);
+    }
+}, {
+    empName: 'Jo',
+    empId: 10,
+    hobbies: ['dance', 'music'],
+    address: {
+        city: 'Goa', state: 'Goa'
+    },
+    details: function () {
+        console.log('hello');
+        console.log(empName + " " + empId);
+    }
+}, {
+    empName: 'Jo',
+    empId: 10,
+    hobbies: ['dance', 'music'],
+    address: {
+        city: 'Goa', state: 'Goa'
+    },
+    details: function () {
+        console.log('hello');
+        console.log(empName + " " + empId);
+    }
+}]
+
+
+employees.forEach(emp=>{
+    console.log(emp);
+    //iterate and print the details of each employee
+})

@@ -15,9 +15,10 @@ let promise = new Promise((resolve, reject) => {
 // promise.then(data=>{},e=>{}).catch(e=>{}).finally(()=>{})
 promise.then(mobiles => {
     console.log(mobiles);
-    let moblist = mobiles.filter(mobile => mobile.brand == 'Apple');
+    let moblist = mobiles.filter(mobile => mobile.brand == 'Vivo');
     if (moblist.length == 0)
         throw new Error('no mobiles available')
+    console.log(moblist);
 }, error => {
     console.log(error);
     throw error;

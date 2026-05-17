@@ -19,6 +19,15 @@ let {ename, city='goa',eid} = {ename:'Sri',eid:10}
 console.log(`welcome ${ename} from ${city} with emp id ${eid}`);
 
 
+let [a11,b11,c11] = [10,20,30];
+console.log(a11,b11,c11); //10 20 30
+
+let[,,x] = [10,20,30,40];
+console.log(x); //30
+let [a1,b1,c1] = [10,20];
+console.log(c1); //undefined
+let [a2,b2,c2=40] = [10,20];
+console.log(c2); //40
 
 
 
