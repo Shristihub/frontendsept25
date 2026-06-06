@@ -1,0 +1,59 @@
+{
+    "products":[
+        {
+            "productId":1,
+            "productName":"Iphone 14 Pro Max",
+            "price":120000,
+            "brand":"Apple",
+            "category":"Mobile",
+            "description":"The iPhone 14 Pro Max is ",
+            "stock":100
+        },
+        {
+            "productId":2,
+            "productName":"Speaker",
+            "price":9000,
+            "brand":"Boat",
+            "category":"Electronics",
+            "description":"The Speaker is a high-quality audio device that offers exceptional sound performance. It features a powerful amplifier, clear and crisp sound, and a sleek design that fits any environment. Whether you're listening to music, watching movies, or playing games, the Speaker delivers an immersive audio experience.",
+            "stock":50
+        },
+         {
+            "productId":3,
+            "productName":"Bottle",
+            "price":900,
+            "brand":"Milton",
+            "category":"Home",
+            "description":"The Bottle is a durable and stylish water bottle that keeps your drinks hot or cold for hours. It features a leak-proof design, making it perfect for on-the-go use. Whether you're at the office, gym, or outdoors, the Bottle ensures your beverages stay at the perfect temperature.",
+            "stock":500
+        },
+        {
+            "productId":4,
+            "productName":"Laptop",
+            "price":50000,
+            "brand":"Dell",
+            "category":"Computers",
+            "description":"The Laptop is a powerful and versatile computing device that offers high performance and portability. It features a sleek design, a vibrant display, and a long-lasting battery, making it ideal for work, entertainment, and everything in between.",
+            "stock":200
+        },
+         {
+            "productId":5,
+            "productName":"Headphones",
+            "price":15000,
+            "brand":"Sony",
+            "category":"Audio",
+            "description":"The Headphones are a premium audio accessory that delivers exceptional sound quality and comfort. They feature noise-canceling technology, a comfortable fit, and a stylish design, making them perfect for music lovers and audiophiles alike.",
+            "stock":300
+        },
+         {
+            "productId":6,
+            "productName":"Smartwatch",
+            "price":20000,
+            "brand":"Samsung",
+            "category":"Wearables",
+            "description":"The Smartwatch is a cutting-edge wearable device that combines style and functionality. It features a sleek design, a vibrant display, and a range of health and fitness tracking features, making it the perfect companion for your active lifestyle.",
+            "stock":150
+        }
+
+    ]
+}
