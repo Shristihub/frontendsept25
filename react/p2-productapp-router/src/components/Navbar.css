@@ -11,5 +11,9 @@ a{
     padding:10px;
 
     border-radius:20px;
-
+}
+/* used with NavLink */
+a.active{
+    background-color:#febd69;
+    color:black;
 }
