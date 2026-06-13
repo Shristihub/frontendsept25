@@ -1,0 +1,19 @@
+nav{
+    display:flex;
+    gap:24px;
+    background-color:#232F3E;
+    margin-left:0px;
+}
+a{
+    text-decoration:none;
+    font-size:18px;
+    color:white;
+    padding:10px;
+
+    border-radius:20px;
+}
+/* used with NavLink */
+a.active{
+    background-color:#febd69;
+    color:black;
+}

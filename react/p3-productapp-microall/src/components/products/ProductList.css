@@ -1,0 +1,10 @@
+.product-container{
+    display: flex;
+    gap:24px;
+}
+.product-card{
+    border:1px solid #ccc;
+    padding:16px;
+    border-radius:8px;
+    width:200px;
+}

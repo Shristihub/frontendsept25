@@ -13,6 +13,7 @@ const Greeter = ({uname}) => {
              value={username} 
              onChange={(e)=>setUsername(e.target.value)}></input>
       <button onClick={()=>showMsg()}> ShowMessage</button>
+      <button onClick={showMsg}> ShowMessage</button>
     </div>
   )
 }

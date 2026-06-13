@@ -1,18 +1,8 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  // it passes props that has isActive and isPending
-  // const navStyle =(props)=>{
-  //   // returns an object
-  //  return ({
-  //   color:props.isActive?'red':"white",
-  //   textTransform:props.isActive?'Uppercase':'none'
-  //  })
-  // }
-  
-  // destructure the props and pass the property directly
+ // destructure the props and pass the property directly
    const navStyle = ({isActive})=>{
     //returns an object to the style
      return ({
@@ -32,13 +22,7 @@ const Navbar = () => {
         <NavLink to="/products" style={navStyle}>
           Products
         </NavLink>
-        <NavLink to="/books" style={({isActive})=>{
-          return({
-             color:isActive?'blue':"white",
-             textTransform:isActive?'Uppercase':'none'
-          })
-        }}>Books</NavLink>
-        <NavLink to="/contact">ContactUs</NavLink>
+       <NavLink to="/contact">ContactUs</NavLink>
       </nav>
 
       {/* <nav>
