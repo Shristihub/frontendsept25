@@ -1,29 +1,33 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate,Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
- // destructure the props and pass the property directly
-   const navStyle = ({isActive})=>{
+  const navigate = useNavigate();
+  // destructure the props and pass the property directly
+  const navStyle = ({ isActive }) => {
     //returns an object to the style
-     return ({
-    color:isActive?'red':"white",
-    textTransform:isActive?'Uppercase':'none'
-   })
-   }
+    return {
+      color: isActive ? "red" : "white",
+      textTransform: isActive ? "Uppercase" : "none",
+    };
+  };
 
- return (
+  return (
     <>
+     <div className="cartdiv">
+        <Link to="/cart" id="cart">
+          <button onClick={() => navigate("/cart")}>Cart</button>
+        </Link>
+      </div>
       <nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink
-          to="/about">
-          AboutUs
-        </NavLink>
+        <NavLink to="/about">AboutUs</NavLink>
         <NavLink to="/products" style={navStyle}>
           Products
         </NavLink>
-       <NavLink to="/contact">ContactUs</NavLink>
+        <NavLink to="/contact">ContactUs</NavLink>
       </nav>
+    
 
       {/* <nav>
       <Link to="/">Home</Link>

@@ -19,6 +19,7 @@ import UpdateProduct from "./pages/dashboard/product/UpdateProduct";
 import Home from "./pages/Home";
 import { PageNotFound } from "./pages/PageNotFound";
 import Products from "./pages/products/Products";
+import CartDetails from "./components/products/CartDetails";
 const App = () => {
   return (
     <div>
@@ -50,6 +51,8 @@ const App = () => {
           <Route path="/dashboard/products/delete" element={<DeleteProduct />} />
         {/* <Route path="/cart" element={<CartDetails/>}></Route> */}
         <Route path="/contact" element={<Contactus />}></Route>
+        <Route path="/cart" element={<CartDetails />}></Route>
+        
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

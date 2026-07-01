@@ -20,8 +20,8 @@ export const addProduct = (product)=>{
 }
 
 // http://localhost:9000/catalog/admin/products?productId
-export const addProduct = (product)=>{
+export const updateProduct = (product)=>{
     // console.log(product);
     console.log(ADMIN_API_URL);
-   return axios.post(ADMIN_API_URL, product);
+   return axios.getProducts(ADMIN_API_URL, product);
 }

@@ -17,3 +17,10 @@ a.active{
     background-color:#febd69;
     color:black;
 }
+.cartdiv{
+    background-color: rgb(191, 229, 241);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-items: right;  
+}
+
