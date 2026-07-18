@@ -42,7 +42,7 @@ const ProductDetails = () => {
   const handleAddToCart = async ()=>{
     const cartItem = {
       productId: product.productId,
-      userId:1, quantity
+      quantity
     }
    //call CartService
     const res = await addToCart(cartItem);

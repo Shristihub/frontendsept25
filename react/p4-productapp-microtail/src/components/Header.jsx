@@ -22,14 +22,14 @@ const Header = () => {
       {/* Actions */}
       <div className="flex items-center gap-3 shrink-0">
         <button
-          onClick={() => navigate("/signup")}
+          onClick={() => navigate("/register")}
           className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-800 transition"
         >
           Sign Up
         </button>
 
         <button
-          onClick={() => navigate("/signin")}
+          onClick={() => navigate("/login")}
           className="rounded-md border border-gray-600 px-3 py-2 text-sm font-medium text-white hover:bg-gray-800 transition"
         >
           Sign In

@@ -33,7 +33,7 @@ const Navbar = () => {
       {categories.map((category) => (
         <NavLink  key={category.categoryId} 
                  className={navStyle}
-                  to={`/products/category/${category.categoryId}`} >
+                  to={`/products/category/${category.categoryName}`} >
           {category.categoryName}
         </NavLink>  
       ))}
