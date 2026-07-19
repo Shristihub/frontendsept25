@@ -3,7 +3,7 @@ import { getProducts } from "../../service/CatalogService";
 import "./ProductList.css";
 import ProductCard from "./ProductCard";
 import { useParams } from "react-router-dom";
-import { getByCategoryName } from "../../service/CategoryService";
+import { getByCategoryName } from "../../service/CatalogService";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -24,11 +24,19 @@ const ProductList = () => {
       setProducts(res.data);
       setLoading(false);
     };
-    fetchProducts();
-    fetchByCategory();
+   if (categoryName) {
+      fetchByCategory();
+    } else {
+      fetchProducts();
+    }
   }, [categoryName]); // whenever categoryName changes, this effect will run
-  if (loading) return <h2>Loading...</h2>;
-
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <p className="text-gray-500 text-sm">Loading...</p>
+      </div>
+    );
+  }
   return (
     <>
       <h2>ProductList</h2>

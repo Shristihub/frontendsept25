@@ -27,7 +27,7 @@ const Navbar = () => {
       <NavLink to="/about" className={navStyle}>
         AboutUs
       </NavLink>
-      <NavLink to="/products" className={navStyle}>
+      <NavLink to="/products" end className={navStyle}>
         ALL
       </NavLink>
       {categories.map((category) => (

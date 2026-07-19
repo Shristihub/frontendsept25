@@ -20,8 +20,4 @@ export const deleteByCategoryId = (categoryId)=>{
 export const viewAllCategories = ()=>{
    return axios.get(API_URL);
 }
-// http://localhost:9000/catalog/categories/categoryName/Electronics
-export const getByCategoryName = (categoryName)=>{
-   return axios.get(`${API_URL}/categoryName/${categoryName}`);
-}
 

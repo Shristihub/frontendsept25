@@ -1,4 +1,4 @@
-import { useEffect, useState, } from "react";
+import { useEffect, useState } from "react";
 import { viewAllBrands } from "../../../service/BrandService";
 import { viewAllCategories } from "../../../service/CategoryService";
 import { addProduct } from "../../../service/CatalogService";
@@ -17,16 +17,16 @@ const AddProduct = () => {
   const [categories, setCategories] = useState([]); // fetch to display in check box
 
   const [brandId, setBrandId] = useState(0); // to send to the backend
-  const [categoryIdList, setCategoryIdList] = useState([]); // to send categoryIds to the backend
+  const [selectedcategoryIdList, setSelectedCategoryIdList] = useState([]); // to send categoryIds to the backend
   const [offers, setOffers] = useState([]); // to send offernames to the backend
 
+  const [deliveryTypes, setDeliveryTypes] = useState([]);
+  const [paymentModes, setPaymentModes] = useState([]);
+
   //create an array
-  const offersList = [
-    "CASH BACK",
-    "NO COST EMI",
-    "BANK OFFER",
-    "PARTNER OFFER",
-  ];
+  const deliveryTypesList = ["STANDARD", "PRIME", "AMAZON"];
+  const paymentModesList = ["CARD", "UPI", "COD"];
+  const offersList = ["CASHBACK","NOCOSTEMI", "BANKOFFER","PARTNEROFFER"];
 
   const fetchBrands = async () => {
     let res = await viewAllBrands();
@@ -43,7 +43,7 @@ const AddProduct = () => {
 
   const handleCategoryToggle = (e) => {
     const id = Number(e.target.value);
-    setCategoryIdList((prev) =>
+    setSelectedCategoryIdList((prev) =>
       e.target.checked
         ? [...prev, { categoryId: id }]
         : prev.filter((c) => c.categoryId != id),
@@ -56,6 +56,18 @@ const AddProduct = () => {
       e.target.checked
         ? [...prev, { offerName: name }]
         : prev.filter((o) => o.offerName != name),
+    );
+  };
+  const handleDeliveryTypeToggle = (e) => {
+    const name = e.target.value;
+    setDeliveryTypes((prev) =>
+      e.target.checked ? [...prev, name] : prev.filter((d) => d != name),
+    );
+  };
+  const handlePaymentModeToggle = (e) => {
+    const name = e.target.value;
+    setPaymentModes((prev) =>
+      e.target.checked ? [...prev, name] : prev.filter((p) => p != name),
     );
   };
 
@@ -71,21 +83,30 @@ const AddProduct = () => {
         material,
         description,
       },
+      offersList: offers,
       brand: {
         brandId: brandId,
       },
-      categoryIdList,
+      categories: selectedcategoryIdList,
+      deliveryTypes,
+      paymentModes,
     };
+    console.log(product);
+
     let res = await addProduct(product);
     console.log(res.status);
-    document.addProductForm.submit();
+    navigate("/dashboard");
   };
 
   return (
     <div className="max-w-2xl mx-auto bg-white rounded-lg border border-gray-200 shadow-sm p-6 my-8">
       <h2 className="text-xl font-semibold text-gray-800 mb-6">Add Product</h2>
 
-      <form onSubmit={handleAddProduct} name="addProductForm" className="space-y-5">
+      <form
+        onSubmit={handleAddProduct}
+        name="addProductForm"
+        className="space-y-5"
+      >
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Product Name
@@ -207,6 +228,7 @@ const AddProduct = () => {
           </label>
           <select
             name="brandId"
+             value={brandId}
             onChange={(e) => setBrandId(e.target.value)}
             className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
@@ -217,7 +239,49 @@ const AddProduct = () => {
             ))}
           </select>
         </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Delivery Types
+          </label>
+          <div className="grid grid-cols-2 gap-2">
+            {deliveryTypesList.map((type) => (
+              <label
+                key={type}
+                className="flex items-center gap-2 text-sm text-gray-700"
+              >
+                <input
+                  type="checkbox"
+                  value={type}
+                  onChange={handleDeliveryTypeToggle}
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+                {type}
+              </label>
+            ))}
+          </div>
+        </div>
 
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Payment Modes
+          </label>
+          <div className="grid grid-cols-2 gap-2">
+            {paymentModesList.map((mode) => (
+              <label
+                key={mode}
+                className="flex items-center gap-2 text-sm text-gray-700"
+              >
+                <input
+                  type="checkbox"
+                  value={mode}
+                  onChange={handlePaymentModeToggle}
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+                {mode}
+              </label>
+            ))}
+          </div>
+        </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Categories
@@ -256,4 +320,5 @@ const AddProduct = () => {
     </div>
   );
 };
+
 export default AddProduct;

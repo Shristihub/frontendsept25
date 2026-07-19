@@ -7,8 +7,8 @@ const API_URL='http://localhost:9000/catalog/brands';
 // BY ADMIN ONLY
 // http://localhost:9000/catalog/brands
 export const addBrand = (brand)=>{
-    console.log(brand);
-    console.log(API_URL);
+   //  console.log(brand);
+   //  console.log(API_URL);
    return axiosInstance.post(API_URL, brand);
 }
 

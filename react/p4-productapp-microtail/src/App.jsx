@@ -23,6 +23,7 @@ import CartDetails from "./components/products/CartDetails";
 import Header from "./components/Header";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
+import Checkout from "./pages/Checkout";
 const App = () => {
   return (
     <div>
@@ -35,7 +36,7 @@ const App = () => {
         {/* nested route */}
         <Route path="/products" element={<Products />}>
           <Route index element={<ProductList />} />
-          <Route path="category/:categoryName" element={<ProductList />} />
+          <Route path="/products/category/:categoryName" element={<ProductList />} />
           {/* passing data in url using path variable */}
           <Route path=":id" element={<ProductDetails />}></Route>
         </Route>
@@ -59,8 +60,8 @@ const App = () => {
         <Route path="/cart" element={<CartDetails />}></Route>
        {/* auth - login, register, logout? */}
        <Route path="/register" element={<Register />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        
+       <Route path="/login" element={<Login />}></Route>
+        <Route path="/confirmed" element={<Checkout />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
